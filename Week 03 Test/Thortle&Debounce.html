@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="input-1">Throttle: </label>
+    <input id="input-1" type="text" />
+    <label for="input">Debouce: </label>
+    <input id="input" type="text" />
+    <p id="p"></p>
+    <script>
+      let interval;
+      let isok = true;
+      const input = document.querySelector("#input");
+      const input1 = document.querySelector("#input-1");
+      const p = document.querySelector("p");
+      input1.addEventListener("input", () => {
+        if (isok === true) {
+          setTimeout(() => {
+            p.innerHTML = input1.value;
+            isok = true;
+          }, 3000);
+          isok = false;
+        }
+      });
+      input.addEventListener("input", () => {
+        clearTimeout(interval);
+        interval = setTimeout(() => {
+          p.innerHTML = input.value;
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
