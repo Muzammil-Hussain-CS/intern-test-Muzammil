@@ -4,4 +4,4 @@
 
 # Time it took to compelete task around 60 mints
 
-# i faced a problem in Promise.all question
+# i faced a problem in Promise.all() question
